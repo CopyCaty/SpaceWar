@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float lifeTime = 3f;
     public Transform particle;
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             LogicScript gameLogic = GameObject.FindGameObjectWithTag("logic").GetComponent<LogicScript>();
+            collision.gameObject.GetComponent<EnemyController>().playDestroySound();
             gameLogic.scoreUpdate(1);
             Destroy(gameObject);
             Destroy(collision.gameObject);

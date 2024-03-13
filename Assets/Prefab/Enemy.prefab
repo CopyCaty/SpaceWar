@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febed6f6ac9e96d44b31bbad21403c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   rotationSpeed: 2
   minDistance: 5
+  audioSource: {fileID: 0}
+  destroyAudio: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!65 &3947478703020927134
 BoxCollider:
   m_ObjectHideFlags: 0

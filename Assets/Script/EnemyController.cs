@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     public float rotationSpeed = 2f;
     public float minDistance = 5f;
+    public AudioClip destroyAudio;
+
     private void Update()
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -20,5 +22,15 @@ public class EnemyController : MonoBehaviour
         {
 
         }
+    }
+
+    public void playDestroySound()
+    {
+        AudioSource audioSource = GameObject.FindGameObjectWithTag("globalSound").GetComponent<AudioSource>();
+        audioSource.clip = destroyAudio;
+        audioSource.loop = false;
+        audioSource.volume = 1f;
+        Debug.Log("Sound Played");
+        audioSource.Play();
     }
 }
